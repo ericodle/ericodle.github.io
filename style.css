@@ -1,0 +1,163 @@
+/* Same palette and type as ouairei.com, so the two read as one person's work. */
+:root {
+	--color-orange: #ff7f00;
+	--color-green-light: #65bb50;
+	--color-bg: #0a0a0a;
+	--color-bg-raised: #141414;
+	--color-text: #f0f0f0;
+	--color-text-muted: #888;
+	--color-text-faint: #555;
+	--color-border: #1f1f1f;
+
+	--font-display: 'Fraunces', 'Times New Roman', serif;
+	--font-body: 'Inter', system-ui, -apple-system, sans-serif;
+	--font-zh: 'Noto Serif TC', 'Fraunces', serif;
+	--font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+	--ease: cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: var(--font-body);
+	background: var(--color-bg);
+	color: var(--color-text);
+	line-height: 1.6;
+	-webkit-font-smoothing: antialiased;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+	transition: color 0.3s var(--ease);
+}
+
+.mono {
+	font-family: var(--font-mono);
+	text-transform: uppercase;
+}
+
+.page {
+	max-width: 760px;
+	margin: 0 auto;
+	padding: clamp(3rem, 10vw, 7rem) 16px 6rem;
+}
+
+/* --- Who this is -------------------------------------------------------- */
+.intro {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 1rem;
+	padding-bottom: 3rem;
+}
+
+.eyebrow {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.8rem;
+	font-size: 0.75rem;
+	letter-spacing: 0.2em;
+	color: var(--color-green-light);
+}
+
+.eyebrow::before {
+	content: '';
+	width: 2rem;
+	height: 1px;
+	background: currentColor;
+}
+
+.title {
+	font-family: var(--font-zh);
+	font-weight: 700;
+	font-size: clamp(2.5rem, 8vw, 4.5rem);
+	line-height: 1.05;
+	letter-spacing: -0.02em;
+}
+
+.lede {
+	color: var(--color-text-muted);
+	font-size: 1.1rem;
+}
+
+.aside {
+	font-size: 0.72rem;
+	letter-spacing: 0.16em;
+	color: var(--color-text-faint);
+}
+
+.aside:hover,
+.aside:focus-visible {
+	color: var(--color-orange);
+}
+
+/* --- Projects ----------------------------------------------------------- */
+.group + .group {
+	margin-top: 3rem;
+}
+
+.group-label {
+	font-size: 0.75rem;
+	letter-spacing: 0.2em;
+	color: var(--color-text-faint);
+	padding-bottom: 0.6rem;
+	border-bottom: 1px solid var(--color-border);
+}
+
+.projects {
+	list-style: none;
+}
+
+.project {
+	display: flex;
+	flex-direction: column;
+	gap: 0.35rem;
+	padding: 1rem 0.8rem;
+	border-bottom: 1px solid var(--color-border);
+	border-left: 2px solid transparent;
+	transition: background 0.25s var(--ease), border-color 0.25s var(--ease);
+}
+
+.project:hover,
+.project:focus-visible {
+	background: var(--color-bg-raised);
+	border-left-color: var(--color-orange);
+}
+
+.p-top {
+	display: flex;
+	align-items: baseline;
+	flex-wrap: wrap;
+	gap: 0.4rem 0.8rem;
+}
+
+.p-name {
+	font-family: var(--font-display);
+	font-weight: 700;
+	font-size: 1.35rem;
+	line-height: 1.2;
+}
+
+.project:hover .p-name,
+.project:focus-visible .p-name {
+	color: var(--color-orange);
+}
+
+.p-host {
+	font-size: 0.72rem;
+	letter-spacing: 0.1em;
+	color: var(--color-text-faint);
+}
+
+.p-desc {
+	color: var(--color-text-muted);
+	font-size: 0.95rem;
+}
