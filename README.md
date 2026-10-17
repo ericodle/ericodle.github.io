@@ -5,8 +5,13 @@ Web development work. Served by GitHub Pages at https://ericodle.github.io/.
 Plain HTML and CSS, no build step: `index.html` and `style.css` are the site.
 Open `index.html` in a browser to preview. Push to `main` to publish.
 
-To add a project, copy one `<li>` in the right group ("Personal Projects" or
-"Client Projects") and change the link, name, address, description and stack.
+To add a project, copy one `<li>` in the right group and change the link,
+name, address, description and stack. The groups:
+
+- **Personal**: my own sites.
+- **Commissioned**: client work where I had full design and development control.
+- **Collaborations**: a major share of the web work, done as a temporary
+  employee or contractor on someone else's team.
 
 `logo.svg` is the brand logo and favicon: 歐艾瑞 (Noto Serif CJK TC Black)
 cut north to south down a green map of Taiwan, with the coast and county

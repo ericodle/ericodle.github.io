@@ -52,15 +52,13 @@ a {
 	padding: clamp(1.25rem, 4vh, 3rem) 16px 2rem;
 }
 
-/* Wide screens: the logo and name sit top right. Centred in the window
-   so everything shows without scrolling. */
+/* Wide screens: the logo and name across the top, aligned right, with the
+   three project groups in columns below. Centred in the window so
+   everything shows without scrolling. */
 @media (min-width: 900px) {
 	.page {
-		grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-		grid-template-areas:
-			'clients intro'
-			'clients personal';
-		gap: 1.5rem 3rem;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 1.25rem 2.5rem;
 		align-content: center;
 		align-items: start;
 		min-height: 100vh;
@@ -68,28 +66,18 @@ a {
 	}
 
 	.intro {
-		grid-area: intro;
+		grid-column: 1 / -1;
 		padding-bottom: 0;
 	}
 
-	.personal {
-		grid-area: personal;
-	}
-
-	.clients {
-		grid-area: clients;
+	.intro .logo {
+		height: 8.5rem;
 	}
 }
 
-/* Wider still: three columns, the name and logo in the third. */
 @media (min-width: 1200px) {
-	.page {
-		grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) auto;
-		grid-template-areas: 'personal clients intro';
-	}
-
 	.intro .logo {
-		height: 14rem;
+		height: 12rem;
 	}
 }
 
@@ -220,7 +208,7 @@ a {
 @media (max-width: 899px) {
 	.page {
 		grid-template-columns: minmax(0, 1fr);
-		gap: 0.7rem;
+		gap: 0.55rem;
 		padding-block: 0.9rem;
 	}
 
@@ -242,7 +230,7 @@ a {
 	}
 
 	.logo {
-		height: 6.25rem;
+		height: 5.25rem;
 	}
 
 	.subtitle {
@@ -252,7 +240,7 @@ a {
 
 	.group-label {
 		font-size: 0.65rem;
-		padding-bottom: 0.4rem;
+		padding-bottom: 0.3rem;
 	}
 
 	.project {
@@ -261,7 +249,7 @@ a {
 		align-items: baseline;
 		column-gap: 0.7rem;
 		row-gap: 0.05rem;
-		padding: 0.38rem 0.6rem;
+		padding: 0.3rem 0.6rem;
 	}
 
 	.p-top {
