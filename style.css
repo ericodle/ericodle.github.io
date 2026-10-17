@@ -52,13 +52,12 @@ a {
 	padding: clamp(1.25rem, 4vh, 3rem) 16px 2rem;
 }
 
-/* Wide screens: the three groups in columns, the logo in the bottom right
-   corner below them. Centred in the window so everything shows without
-   scrolling. */
+/* Wide screens: the three groups in columns. Centred in the window so
+   everything shows without scrolling. */
 @media (min-width: 700px) {
 	.page {
 		grid-template-columns: repeat(3, minmax(0, 1fr));
-		gap: 1rem 2.5rem;
+		gap: 2.5rem;
 		align-content: center;
 		align-items: start;
 		min-height: 100vh;
@@ -68,23 +67,14 @@ a {
 	.group:nth-of-type(1) { grid-area: 1 / 1; }
 	.group:nth-of-type(2) { grid-area: 1 / 2; }
 	.group:nth-of-type(3) { grid-area: 1 / 3; }
-
-	.logo {
-		grid-area: 2 / 3;
-		justify-self: end;
-	}
 }
 
 /* Mid widths: narrow columns wrap more, so tighten things to stay on one
    screen. */
 @media (min-width: 700px) and (max-width: 1199px) {
 	.page {
-		gap: 1rem 1.5rem;
+		gap: 1.5rem;
 		padding-block: 1.25rem;
-	}
-
-	.page .logo img {
-		height: 7rem;
 	}
 
 	.project {
@@ -110,10 +100,40 @@ a {
 }
 
 /* --- Logo --------------------------------------------------------------- */
+/* Pinned behind everything, full window height, faded so the projects read
+   on top. The edges fade out into the page. */
+.logo {
+	position: fixed;
+	inset: 0;
+	z-index: -1;
+	display: grid;
+	place-items: center;
+	pointer-events: none;
+}
+
 .logo img {
-	display: block;
+	height: 100vh;
+	height: 100dvh;
 	width: auto;
-	height: 9rem;
+	max-width: 100vw;
+	object-fit: contain;
+	opacity: 0.14;
+	-webkit-mask-image: radial-gradient(closest-side, #000 60%, transparent);
+	mask-image: radial-gradient(closest-side, #000 60%, transparent);
+	animation: logo-in 1.6s var(--ease) both;
+}
+
+@keyframes logo-in {
+	from {
+		opacity: 0;
+		transform: scale(1.04);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.logo img {
+		animation: none;
+	}
 }
 
 /* --- Projects ----------------------------------------------------------- */
@@ -141,7 +161,9 @@ a {
 
 .project:hover,
 .project:focus-visible {
-	background: var(--color-bg-raised);
+	background: rgb(20 20 20 / 0.6);
+	-webkit-backdrop-filter: blur(6px);
+	backdrop-filter: blur(6px);
 	border-left-color: var(--color-orange);
 }
 
@@ -192,15 +214,6 @@ a {
 		padding-block: 0.9rem;
 	}
 
-	/* Last, in the bottom right corner. */
-	.logo {
-		order: 1;
-		justify-self: end;
-	}
-
-	.logo img {
-		height: 4.5rem;
-	}
 
 	.group-label {
 		font-size: 0.65rem;
