@@ -88,15 +88,10 @@ a {
 	font-size: 1.1rem;
 }
 
-.aside {
-	font-size: 0.72rem;
-	letter-spacing: 0.16em;
+.alt-name {
+	margin-top: -0.6rem;
+	font-size: 0.75rem;
 	color: var(--color-text-faint);
-}
-
-.aside:hover,
-.aside:focus-visible {
-	color: var(--color-orange);
 }
 
 /* --- Projects ----------------------------------------------------------- */
@@ -160,4 +155,30 @@ a {
 .p-desc {
 	color: var(--color-text-muted);
 	font-size: 0.95rem;
+}
+
+.p-stack {
+	font-size: 0.68rem;
+	letter-spacing: 0.1em;
+	color: var(--color-green-light);
+}
+
+/* ouairei.com gets more weight than the rest. */
+.project.featured {
+	padding: 1.6rem 1.2rem;
+	background: var(--color-bg-raised);
+	border-left-color: var(--color-orange);
+}
+
+.project.featured .p-name {
+	font-size: clamp(1.7rem, 5vw, 2.4rem);
+	color: var(--color-orange);
+}
+
+.project.featured .p-host {
+	color: var(--color-text-muted);
+}
+
+.project.featured .p-desc {
+	font-size: 1.05rem;
 }
