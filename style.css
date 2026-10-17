@@ -55,7 +55,7 @@ a {
 /* Wide screens: the logo and name across the top, aligned right, with the
    three project groups in columns below. Centred in the window so
    everything shows without scrolling. */
-@media (min-width: 900px) {
+@media (min-width: 700px) {
 	.page {
 		grid-template-columns: repeat(3, minmax(0, 1fr));
 		gap: 1.25rem 2.5rem;
@@ -78,6 +78,44 @@ a {
 @media (min-width: 1200px) {
 	.intro .logo {
 		height: 12rem;
+	}
+}
+
+/* Mid widths: narrow columns wrap more, so tighten things to stay on one
+   screen. */
+@media (min-width: 700px) and (max-width: 1199px) {
+	.page {
+		gap: 1rem 1.5rem;
+		padding-block: 1.25rem;
+	}
+
+	.intro .logo {
+		height: 6.5rem;
+	}
+
+	.title {
+		font-size: 2.75rem;
+	}
+
+	.project {
+		gap: 0.1rem;
+		padding: 0.5rem 0.6rem;
+	}
+
+	.p-name {
+		font-size: 1.1rem;
+	}
+
+	.p-desc {
+		font-size: 0.85rem;
+		line-height: 1.4;
+	}
+}
+
+/* Narrowest three-column widths: drop the domain line, as phones do. */
+@media (min-width: 700px) and (max-width: 899px) {
+	.p-host {
+		display: none;
 	}
 }
 
@@ -198,7 +236,7 @@ a {
 /* Phones: tighten everything so the whole page fits one screen.
    Client cards put the stack beside the name; the domain hides
    (the card itself is the link). */
-@media (max-width: 899px) {
+@media (max-width: 699px) {
 	.page {
 		grid-template-columns: minmax(0, 1fr);
 		gap: 0.55rem;
