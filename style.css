@@ -47,26 +47,58 @@ a {
 .page {
 	display: grid;
 	gap: 1.25rem;
-	max-width: 1080px;
+	max-width: 1240px;
 	margin: 0 auto;
 	padding: clamp(1.25rem, 4vh, 3rem) 16px 2rem;
 }
 
-/* Two columns on wide screens: who + ouairei.com left, clients right.
-   Centred in the window so everything shows without scrolling. */
+/* Wide screens: the logo and name sit top right. Centred in the window
+   so everything shows without scrolling. */
 @media (min-width: 900px) {
 	.page {
-		grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
-		gap: 3.5rem;
+		grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+		grid-template-areas:
+			'clients intro'
+			'clients personal';
+		gap: 1.5rem 3rem;
 		align-content: center;
+		align-items: start;
 		min-height: 100vh;
 		padding-block: 2rem;
+	}
+
+	.intro {
+		grid-area: intro;
+		padding-bottom: 0;
+	}
+
+	.personal {
+		grid-area: personal;
+	}
+
+	.clients {
+		grid-area: clients;
+	}
+}
+
+/* Wider still: three columns, the name and logo in the third. */
+@media (min-width: 1200px) {
+	.page {
+		grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) auto;
+		grid-template-areas: 'personal clients intro';
+	}
+
+	.intro .logo {
+		height: 14rem;
 	}
 }
 
 /* --- Who this is -------------------------------------------------------- */
+/* Logo on the far right, text right-aligned beside it. */
 .intro {
 	display: flex;
+	flex-direction: row-reverse;
+	justify-content: flex-start;
 	align-items: center;
 	gap: 1.25rem;
 	padding-bottom: 1.1rem;
@@ -75,7 +107,8 @@ a {
 .intro-text {
 	display: flex;
 	flex-direction: column;
-	align-items: flex-start;
+	align-items: flex-end;
+	text-align: right;
 	gap: 0.5rem;
 }
 
@@ -97,7 +130,7 @@ a {
 
 .logo {
 	width: auto;
-	height: 9.5rem;
+	height: 10rem;
 }
 
 .title {
@@ -209,7 +242,7 @@ a {
 	}
 
 	.logo {
-		height: 5rem;
+		height: 6.25rem;
 	}
 
 	.subtitle {

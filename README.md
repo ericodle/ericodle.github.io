@@ -9,8 +9,8 @@ To add a project, copy one `<li>` in the right group ("Personal Projects" or
 "Client Projects") and change the link, name, address, description and stack.
 
 `logo.svg` is the brand logo and favicon: 歐艾瑞 (Noto Serif CJK TC Black)
-cut north to south down a map of Taiwan, outlying islands in orange
-(g0v/twgeojson, public domain). `favicon.ico` and
+cut north to south down a green map of Taiwan, with the coast and county
+lines in orange (g0v/twgeojson, public domain). `favicon.ico` and
 `apple-touch-icon.png` are PNG copies of it for browsers that skip SVG icons.
 
 Photography lives at https://ouairei.com/.
