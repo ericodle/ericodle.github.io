@@ -8,9 +8,10 @@ Open `index.html` in a browser to preview. Push to `main` to publish.
 To add a project, copy one `<li>` in the right group and change the link,
 name, address, description and stack. The groups:
 
-- **Personal**: my own sites.
-- **Commissioned**: client work where I had full design and development control.
-- **Collaborations**: a major share of the web work, done as a temporary
+- **Personal Projects**: my own sites.
+- **Full Creative Control**: client work where I had full design and
+  development control.
+- **Commissioned Work**: a major share of the web work, done as a temporary
   employee or contractor on someone else's team.
 
 `logo.svg` is the brand logo and favicon: 歐艾瑞 (Noto Serif CJK TC Black)
