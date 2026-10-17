@@ -52,32 +52,26 @@ a {
 	padding: clamp(1.25rem, 4vh, 3rem) 16px 2rem;
 }
 
-/* Wide screens: the logo and name across the top, aligned right, with the
-   three project groups in columns below. Centred in the window so
-   everything shows without scrolling. */
+/* Wide screens: the three groups in columns, the logo in the bottom right
+   corner below them. Centred in the window so everything shows without
+   scrolling. */
 @media (min-width: 700px) {
 	.page {
 		grid-template-columns: repeat(3, minmax(0, 1fr));
-		gap: 1.25rem 2.5rem;
+		gap: 1rem 2.5rem;
 		align-content: center;
 		align-items: start;
 		min-height: 100vh;
 		padding-block: 2rem;
 	}
 
-	.intro {
-		grid-column: 1 / -1;
-		padding-bottom: 0;
-	}
+	.group:nth-of-type(1) { grid-area: 1 / 1; }
+	.group:nth-of-type(2) { grid-area: 1 / 2; }
+	.group:nth-of-type(3) { grid-area: 1 / 3; }
 
-	.intro .logo {
-		height: 8.5rem;
-	}
-}
-
-@media (min-width: 1200px) {
-	.intro .logo {
-		height: 12rem;
+	.logo {
+		grid-area: 2 / 3;
+		justify-self: end;
 	}
 }
 
@@ -89,12 +83,8 @@ a {
 		padding-block: 1.25rem;
 	}
 
-	.intro .logo {
-		height: 6.5rem;
-	}
-
-	.title {
-		font-size: 2.75rem;
+	.page .logo img {
+		height: 7rem;
 	}
 
 	.project {
@@ -119,52 +109,11 @@ a {
 	}
 }
 
-/* --- Who this is -------------------------------------------------------- */
-/* Logo on the far right, text right-aligned beside it. */
-.intro {
-	display: flex;
-	flex-direction: row-reverse;
-	justify-content: flex-start;
-	align-items: center;
-	gap: 1.25rem;
-	padding-bottom: 1.1rem;
-}
-
-.intro-text {
-	display: flex;
-	flex-direction: column;
-	align-items: flex-end;
-	text-align: right;
-	gap: 0.5rem;
-}
-
-.eyebrow {
-	display: inline-flex;
-	align-items: center;
-	gap: 0.8rem;
-	font-size: 0.75rem;
-	letter-spacing: 0.2em;
-	color: var(--color-green-light);
-}
-
-.eyebrow::before {
-	content: '';
-	width: 2rem;
-	height: 1px;
-	background: currentColor;
-}
-
-.logo {
+/* --- Logo --------------------------------------------------------------- */
+.logo img {
+	display: block;
 	width: auto;
-	height: 10rem;
-}
-
-.title {
-	font-family: var(--font-zh);
-	font-weight: 700;
-	font-size: clamp(2.5rem, 8vw, 3.75rem);
-	line-height: 1.05;
-	letter-spacing: -0.02em;
+	height: 9rem;
 }
 
 /* --- Projects ----------------------------------------------------------- */
@@ -243,25 +192,14 @@ a {
 		padding-block: 0.9rem;
 	}
 
-	.intro {
-		gap: 0.9rem;
-		padding-bottom: 0.6rem;
-	}
-
-	.intro-text {
-		gap: 0.25rem;
-	}
-
-	.eyebrow {
-		font-size: 0.65rem;
-	}
-
-	.title {
-		font-size: 2rem;
-	}
-
+	/* Last, in the bottom right corner. */
 	.logo {
-		height: 5.25rem;
+		order: 1;
+		justify-self: end;
+	}
+
+	.logo img {
+		height: 4.5rem;
 	}
 
 	.group-label {
