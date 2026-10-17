@@ -206,8 +206,9 @@ a {
    (the card itself is the link). */
 @media (max-width: 899px) {
 	.page {
-		gap: 0.9rem;
-		padding-block: 1rem;
+		grid-template-columns: minmax(0, 1fr);
+		gap: 0.7rem;
+		padding-block: 0.9rem;
 	}
 
 	.intro {
@@ -224,11 +225,11 @@ a {
 	}
 
 	.title {
-		font-size: 2.25rem;
+		font-size: 2rem;
 	}
 
 	.logo {
-		height: 5.75rem;
+		height: 5rem;
 	}
 
 	.subtitle {
@@ -243,11 +244,11 @@ a {
 
 	.project {
 		display: grid;
-		grid-template-columns: auto 1fr;
+		grid-template-columns: auto minmax(0, 1fr);
 		align-items: baseline;
 		column-gap: 0.7rem;
-		row-gap: 0.1rem;
-		padding: 0.5rem 0.6rem;
+		row-gap: 0.05rem;
+		padding: 0.38rem 0.6rem;
 	}
 
 	.p-top {
@@ -269,25 +270,26 @@ a {
 		justify-self: end;
 		font-size: 0.58rem;
 		letter-spacing: 0.04em;
-		white-space: nowrap;
+		line-height: 1.3;
+		text-align: right;
 	}
 
 	.p-desc {
 		grid-column: 1 / -1;
 		font-size: 0.82rem;
-		line-height: 1.35;
+		line-height: 1.3;
 	}
 
 	.project.featured {
-		padding: 0.7rem 0.9rem;
+		padding: 0.55rem 0.8rem;
 	}
 
 	.project.featured .p-name {
-		font-size: 1.6rem;
+		font-size: 1.45rem;
 	}
 
 	.project.featured .p-desc {
-		font-size: 0.9rem;
+		font-size: 0.82rem;
 	}
 }
 
