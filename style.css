@@ -97,11 +97,6 @@ a {
 	letter-spacing: -0.02em;
 }
 
-.lede {
-	color: var(--color-text-muted);
-	font-size: 1rem;
-}
-
 .subtitle {
 	margin-top: -0.4rem;
 	font-family: var(--font-display);
@@ -193,4 +188,102 @@ a {
 
 .project.featured .p-desc {
 	font-size: 1.05rem;
+}
+
+/* Phones: tighten everything so the whole page fits one screen.
+   Client cards put the stack beside the name; the domain hides
+   (the card itself is the link). */
+@media (max-width: 899px) {
+	.page {
+		gap: 0.9rem;
+		padding-block: 1rem;
+	}
+
+	.intro {
+		gap: 0.25rem;
+		padding-bottom: 0.6rem;
+	}
+
+	.eyebrow {
+		font-size: 0.65rem;
+	}
+
+	.title {
+		font-size: 2.25rem;
+	}
+
+	.subtitle {
+		margin-top: 0;
+		font-size: 1.05rem;
+	}
+
+	.group-label {
+		font-size: 0.65rem;
+		padding-bottom: 0.4rem;
+	}
+
+	.project {
+		display: grid;
+		grid-template-columns: auto 1fr;
+		align-items: baseline;
+		column-gap: 0.7rem;
+		row-gap: 0.1rem;
+		padding: 0.5rem 0.6rem;
+	}
+
+	.p-top {
+		display: contents;
+	}
+
+	.p-name {
+		font-size: 1.05rem;
+		white-space: nowrap;
+	}
+
+	.p-host {
+		display: none;
+	}
+
+	.p-stack {
+		grid-row: 1;
+		grid-column: 2;
+		justify-self: end;
+		font-size: 0.58rem;
+		letter-spacing: 0.04em;
+		white-space: nowrap;
+	}
+
+	.p-desc {
+		grid-column: 1 / -1;
+		font-size: 0.82rem;
+		line-height: 1.35;
+	}
+
+	.project.featured {
+		padding: 0.7rem 0.9rem;
+	}
+
+	.project.featured .p-name {
+		font-size: 1.6rem;
+	}
+
+	.project.featured .p-desc {
+		font-size: 0.9rem;
+	}
+}
+
+/* Narrow phones: a little smaller still. */
+@media (max-width: 380px) {
+	.page {
+		padding-inline: 12px;
+	}
+
+	.p-desc,
+	.project.featured .p-desc {
+		font-size: 0.76rem;
+	}
+
+	.project.featured .p-name {
+		font-size: 1.4rem;
+	}
 }
